@@ -1,6 +1,7 @@
 # Neovim 설정
 
-`nvim/config/`가 실제 설정이고, `~/.config/nvim`은 여기로의 심볼릭 링크다.
+`nvim/config/`가 원본이고, bootstrap이 `~/.config/nvim`으로 복사한다.
+`~/.config/nvim`을 직접 수정하거나 `:Lazy sync`로 lazy-lock.json이 바뀌면 여기 사본에 반영해 커밋할 것.
 일상 사용 키맵·기능 요약은 [USAGE.md](./USAGE.md) 참조.
 
 - 출처: `hwyncho/neovim-settings`의 **최신본(324b216, 2026-05-27, nvim v0.12 마이그레이션)** 기준으로
@@ -15,7 +16,7 @@
 
 ## 새 맥 설치 순서
 
-1. bootstrap이 `~/.config/nvim → my-settings/nvim/config` 링크 생성
+1. bootstrap이 `nvim/config/`를 `~/.config/nvim`으로 복사
 2. `nvim` 첫 실행 → lazy.nvim이 플러그인 58개(lazy-lock.json 고정) 설치,
    **mason-tool-installer가 LSP·포매터·린터·DAP·Java 스택(jdtls 등)을 전부 자동 설치** (수동 단계 없음)
 3. 외부 CLI(shellcheck·hadolint·jq·dotenv-linter·fd·ripgrep·tree-sitter-cli)는 Brewfile로 설치됨

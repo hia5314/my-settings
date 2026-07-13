@@ -1,5 +1,5 @@
 # =============================================================================
-# ~/.zshrc — my-settings/zsh/.zshrc 의 심볼릭 링크로 관리
+# ~/.zshrc — my-settings/zsh/.zshrc 를 bootstrap이 복사해 관리 (수정 시 저장소에 반영)
 #
 # 구성: [1] 버전·alias (자주 수정)  [2] p10k instant prompt  [3] 환경변수·PATH
 #       [4] 자동완성·프롬프트       [5] 기기 한정 설정(~/.zshrc.local)
@@ -88,8 +88,8 @@ fi
 source "${_kubectl_comp}"
 unset _kubectl_comp
 
-# Powerlevel10k 프롬프트 — 테마 본체 + 개인 설정(zsh/.p10k.zsh → ~/.p10k.zsh 링크)
-# 모양 변경은 `p10k configure` 실행 (~/.p10k.zsh 갱신 — 링크가 파일로 대체되면 저장소에 재반영)
+# Powerlevel10k 프롬프트 — 테마 본체 + 개인 설정(zsh/.p10k.zsh의 복사본)
+# 모양 변경은 `p10k configure` 실행 후 갱신된 ~/.p10k.zsh를 저장소에 재반영
 source "${HOMEBREW_PREFIX}/opt/powerlevel10k/share/powerlevel10k/powerlevel10k.zsh-theme"
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 

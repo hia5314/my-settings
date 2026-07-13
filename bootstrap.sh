@@ -2,9 +2,11 @@
 # =============================================================================
 # my-settings bootstrap — 새 맥 초기화 스크립트 (macOS 전용, 재실행 안전)
 #
-# 하는 일: Homebrew 설치·패키지 복원 → dotfile 심볼릭 링크 → npm 전역 패키지
-#          → VS Code 설정·확장 → 폰트(private/) → 남은 수동 단계 안내
+# 하는 일: Homebrew 설치·패키지 복원 → dotfile 복사(실제 위치 덮어쓰기)
+#          → npm 전역 패키지 → VS Code 설정·확장 → 폰트(private/) → 수동 단계 안내
 # 사용법: git clone <repo> && cd my-settings && ./bootstrap.sh
+# 참고: 심볼릭 링크를 쓰지 않는다 — 저장소 파일을 실제 위치로 복사하며,
+#       덮어쓰기 전 기존 파일은 ~/.dotfiles-backup/<일시>/ 에 백업된다.
 # =============================================================================
 
 set -euo pipefail
@@ -28,18 +30,23 @@ backup_file() {
     fi
 }
 
-# 심볼릭 링크 생성 (이미 올바른 링크면 건너뜀)
-link_file() {
+# 저장소 파일/디렉터리를 실제 위치로 복사 (내용이 같으면 건너뜀)
+# 과거 심볼릭 링크 방식의 잔재는 링크를 지우고 실파일로 교체한다
+copy_file() {
     local src="$1" dest="$2"
-    if [[ "$(readlink "$dest" 2>/dev/null)" == "$src" ]]; then
-        log_success "링크 확인: $dest"
+    if [[ ! -L "$dest" ]] && diff -rq "$src" "$dest" >/dev/null 2>&1; then
+        log_success "최신 상태: $dest"
         return
     fi
-    backup_file "$dest"
-    rm -rf "$dest"
+    if [[ -L "$dest" ]]; then
+        rm "$dest"
+    elif [[ -e "$dest" ]]; then
+        backup_file "$dest"
+        rm -rf "$dest"
+    fi
     mkdir -p "$(dirname "$dest")"
-    ln -s "$src" "$dest"
-    log_success "링크 생성: $dest -> $src"
+    cp -R "$src" "$dest"
+    log_success "복사: $src -> $dest"
 }
 
 # -----------------------------------------------------------------------------
@@ -54,15 +61,16 @@ log_info "brew bundle 실행..."
 brew bundle --file="$SCRIPT_DIR/Brewfile"
 
 # -----------------------------------------------------------------------------
-# 2. Dotfile 심볼릭 링크 — 저장소가 원본, 홈 디렉터리는 링크
+# 2. Dotfile 복사 — 저장소가 원본, 실제 위치의 파일을 덮어씀
+#    (실사용 파일을 직접 수정했다면 저장소 사본에 반영 후 커밋할 것)
 # -----------------------------------------------------------------------------
-link_file "$SCRIPT_DIR/zsh/.zshrc"      "$HOME/.zshrc"
-link_file "$SCRIPT_DIR/zsh/.p10k.zsh"   "$HOME/.p10k.zsh"
-link_file "$SCRIPT_DIR/tmux/tmux.conf"  "$HOME/.tmux.conf"
-link_file "$SCRIPT_DIR/vim/.vimrc"      "$HOME/.vimrc"
-link_file "$SCRIPT_DIR/git/.gitconfig"  "$HOME/.gitconfig"
-link_file "$SCRIPT_DIR/nvim/config"     "$HOME/.config/nvim"
-link_file "$SCRIPT_DIR/claude/CLAUDE.md" "$HOME/.claude/CLAUDE.md"
+copy_file "$SCRIPT_DIR/zsh/.zshrc"      "$HOME/.zshrc"
+copy_file "$SCRIPT_DIR/zsh/.p10k.zsh"   "$HOME/.p10k.zsh"
+copy_file "$SCRIPT_DIR/tmux/tmux.conf"  "$HOME/.tmux.conf"
+copy_file "$SCRIPT_DIR/vim/.vimrc"      "$HOME/.vimrc"
+copy_file "$SCRIPT_DIR/git/.gitconfig"  "$HOME/.gitconfig"
+copy_file "$SCRIPT_DIR/nvim/config"     "$HOME/.config/nvim"
+copy_file "$SCRIPT_DIR/claude/CLAUDE.md" "$HOME/.claude/CLAUDE.md"
 
 mkdir -p "$HOME/.vim/undodir"   # .vimrc의 undofile 저장 위치
 
@@ -77,12 +85,8 @@ EOF
     log_warn "~/.gitconfig.local 생성됨 — user.name / user.email을 채울 것"
 fi
 
-# Claude Code 전역 설정 — 도구가 파일을 재작성하므로 링크 대신 최초 1회 복사
-if [[ ! -f "$HOME/.claude/settings.json" ]]; then
-    mkdir -p "$HOME/.claude"
-    cp "$SCRIPT_DIR/claude/settings.json" "$HOME/.claude/settings.json"
-    log_success "복사: ~/.claude/settings.json"
-fi
+# Claude Code 전역 설정 (도구가 실행 중 갱신하는 파일 — 기존 것은 백업 후 덮어씀)
+copy_file "$SCRIPT_DIR/claude/settings.json" "$HOME/.claude/settings.json"
 
 # -----------------------------------------------------------------------------
 # 3. npm 전역 패키지 (brew node@22는 keg-only라 경로 직접 사용)
@@ -94,16 +98,13 @@ if [[ -x "$NPM" ]]; then
 fi
 
 # -----------------------------------------------------------------------------
-# 4. VS Code — 설정은 복사(직접 수정되는 파일), 확장은 목록 기반 설치
+# 4. VS Code — 설정 복사 + 확장 목록 기반 설치
 # -----------------------------------------------------------------------------
 VSCODE_USER="$HOME/Library/Application Support/Code/User"
 if [[ -d "$(dirname "$VSCODE_USER")" ]]; then
     mkdir -p "$VSCODE_USER"
-    for f in settings.json keybindings.json; do
-        backup_file "$VSCODE_USER/$f"
-        cp "$SCRIPT_DIR/vscode/$f" "$VSCODE_USER/$f"
-    done
-    log_success "VS Code 설정 복사 완료"
+    copy_file "$SCRIPT_DIR/vscode/settings.json"    "$VSCODE_USER/settings.json"
+    copy_file "$SCRIPT_DIR/vscode/keybindings.json" "$VSCODE_USER/keybindings.json"
 fi
 if command -v code &>/dev/null; then
     log_info "VS Code 확장 설치..."

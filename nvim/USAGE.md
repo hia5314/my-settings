@@ -1,6 +1,6 @@
 # Neovim 사용 가이드
 
-> 설정 위치: 이 저장소의 `nvim/config/` (`~/.config/nvim`은 여기로의 심볼릭 링크) — 관리 방법은 [README.md](./README.md) 참조.
+> 설정 위치: 이 저장소의 `nvim/config/` (bootstrap이 `~/.config/nvim`으로 복사) — 관리 방법은 [README.md](./README.md) 참조.
 > 전체 키맵·외부 도구·지원 언어 상세는 `config/docs/` 참조. 이 문서는 일상 사용에 필요한 핵심만 정리한 것이다.
 
 ## 기본 동작
