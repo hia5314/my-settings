@@ -13,13 +13,13 @@ cd ~/my-settings && ./bootstrap.sh
 |---|---|---|
 | `Brewfile` | brew 패키지 (CLI·런타임·폰트 — GUI 앱 제외) | `brew bundle` |
 | `zsh/` | `.zshrc`, `.p10k.zsh` (프롬프트) | 복사 |
-| `git/` | `.gitconfig` — user 정보는 `~/.gitconfig.local`로 분리 | 복사 |
+| `git/` | `.gitconfig`·전역 `ignore` — user 정보는 `~/.gitconfig.local`로 분리 | 복사 |
 | `tmux/` | `tmux.conf` (prefix C-a) | 복사 |
 | `vim/` | `.vimrc` — 터미널 빠른 편집용 (메인은 nvim) | 복사 |
 | `nvim/` | Neovim 설정 전체 (vendored) — [README](nvim/README.md) · [사용 가이드](nvim/USAGE.md) | 복사 (디렉터리) |
 | `node/` | npm 전역 패키지 목록 | `npm install -g` |
 | `vscode/` | 설정·키바인딩·확장 목록 | 복사 + `code --install-extension` |
-| `claude/` | Claude Code 전역 지침·설정·[플러그인 목록](claude/plugins.md) | 복사 |
+| `claude/` | Claude Code 전역 설정·[플러그인 문서](claude/plugins.md) | 복사 |
 | `private/` | 상용 폰트·테마, 사내 자산 — **git 미추적** (개인 백업으로 이전) | 디렉터리 내 README 참조 |
 
 ## 관리 원칙

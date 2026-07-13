@@ -1,0 +1,4 @@
+# 전역 gitignore — bootstrap이 ~/.config/git/ignore로 복사
+# (core.excludesfile 미설정 시 git이 기본으로 읽는 XDG 경로)
+.DS_Store
+**/.claude/settings.local.json

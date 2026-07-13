@@ -63,7 +63,9 @@ brew "vim"                   # 터미널 빠른 편집용 (alias vi=vim)
 # -----------------------------------------------------------------------------
 brew "powerlevel10k"         # zsh 프롬프트 — 개인 설정: zsh/.p10k.zsh
 brew "tmux"
+brew "zsh-autosuggestions"   # 히스토리 기반 자동제안
 brew "zsh-completions"
+brew "zsh-syntax-highlighting"  # 명령어 문법 하이라이트
 
 # -----------------------------------------------------------------------------
 # Fonts — 주 폰트 PragmataPro Mono NF는 상용이라 수동 설치 (private/fonts/)

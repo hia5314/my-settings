@@ -16,6 +16,7 @@ export JAVA_VERSION="21"    # brew openjdk@21
 export NODE_VERSION="22"    # brew node@22 (LTS)
 
 # 편집기 — 터미널 빠른 편집은 vim, 메인 에디터는 nvim
+export EDITOR="vim"       # kubectl edit, crontab 등 CLI 도구가 사용
 alias vi="vim"
 
 # Kubernetes
@@ -93,7 +94,13 @@ unset _kubectl_comp
 source "${HOMEBREW_PREFIX}/opt/powerlevel10k/share/powerlevel10k/powerlevel10k.zsh-theme"
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 
+# 히스토리 기반 자동제안 (회색 제안 — → 키로 수락)
+source "${HOMEBREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+
 # -----------------------------------------------------------------------------
 # [5] 기기 한정 설정 — 시크릿, 회사/기기 전용 값은 ~/.zshrc.local에 (git 미추적)
 # -----------------------------------------------------------------------------
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+
+# 명령어 문법 하이라이트 — ZLE 훅을 감싸는 방식이라 반드시 파일 마지막에 로드
+source "${HOMEBREW_PREFIX}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"

@@ -69,8 +69,8 @@ copy_file "$SCRIPT_DIR/zsh/.p10k.zsh"   "$HOME/.p10k.zsh"
 copy_file "$SCRIPT_DIR/tmux/tmux.conf"  "$HOME/.tmux.conf"
 copy_file "$SCRIPT_DIR/vim/.vimrc"      "$HOME/.vimrc"
 copy_file "$SCRIPT_DIR/git/.gitconfig"  "$HOME/.gitconfig"
+copy_file "$SCRIPT_DIR/git/ignore"      "$HOME/.config/git/ignore"
 copy_file "$SCRIPT_DIR/nvim/config"     "$HOME/.config/nvim"
-copy_file "$SCRIPT_DIR/claude/CLAUDE.md" "$HOME/.claude/CLAUDE.md"
 
 mkdir -p "$HOME/.vim/undodir"   # .vimrc의 undofile 저장 위치
 
