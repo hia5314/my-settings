@@ -1,0 +1,60 @@
+# VSCode 확장 목록 — 2026-07-13 실사용 기준 (43개)
+# 설치: grep -v '^#' extensions.txt | awk '{print $1}' | xargs -L1 code --install-extension
+# 현재 설치 목록과 대조: code --list-extensions
+
+# --- AI / 에디터 연동 ---
+anthropic.claude-code                       # Claude Code 연동
+asvetliakov.vscode-neovim                   # nvim 임베드 — 키맵은 nvim 설정으로 통일 (nvim/config/lua/vscode-neovim/)
+
+# --- Java / Spring ---
+redhat.java                                 # Java 언어 지원 (LSP)
+vscjava.vscode-java-pack                    # Java 메타팩 (아래 개별 확장들을 묶어 설치)
+vscjava.vscode-java-debug                   # 디버거
+vscjava.vscode-java-test                    # 테스트 러너
+vscjava.vscode-java-dependency              # 프로젝트/의존성 뷰
+vscjava.vscode-maven                        # Maven 지원
+vscjava.vscode-gradle                       # Gradle 지원
+vscjava.vscode-spring-initializr            # Spring 프로젝트 생성
+vscjava.vscode-spring-boot-dashboard        # Spring Boot 실행 대시보드
+vmware.vscode-spring-boot                   # Spring Boot 언어 지원
+vmware.vscode-boot-dev-pack                 # Spring 메타팩
+
+# --- Python ---
+ms-python.python                            # Python 기본 지원
+ms-python.vscode-pylance                    # 언어 서버
+ms-python.debugpy                           # 디버거
+ms-python.vscode-python-envs                # 가상환경(.venv/uv) 관리 UI
+charliermarsh.ruff                          # 린트+포맷 (프로젝트 uv/ruff와 일치)
+ms-toolsai.jupyter                          # Jupyter 노트북
+ms-toolsai.jupyter-keymap                   # Jupyter 키맵
+ms-toolsai.jupyter-renderers                # 출력 렌더러
+ms-toolsai.vscode-jupyter-cell-tags         # 셀 태그
+ms-toolsai.vscode-jupyter-slideshow         # 슬라이드쇼
+
+# --- Go ---
+golang.go                                   # Go 지원 (gopls/dlv 연동)
+
+# --- 컨테이너 / 원격 ---
+ms-azuretools.vscode-containers             # 컨테이너 관리 (구 Docker 확장의 후속)
+ms-vscode-remote.remote-containers          # Dev Containers
+ms-vscode-remote.remote-ssh                 # SSH 원격 개발
+ms-vscode-remote.remote-ssh-edit            # SSH 설정 편집
+ms-vscode.remote-explorer                   # 원격 탐색기
+
+# --- 포맷 / 린트 / 파일 형식 ---
+esbenp.prettier-vscode                      # Prettier (JS/TS/JSON/MD 등)
+editorconfig.editorconfig                   # .editorconfig 적용
+davidanson.vscode-markdownlint              # Markdown 린트
+redhat.vscode-yaml                          # YAML 지원 (k8s 스키마 포함)
+tamasfe.even-better-toml                    # TOML 지원
+foxundermoon.shell-format                   # 셸 스크립트 포맷 (shfmt 연동)
+nicolasvuillamy.vscode-groovy-lint          # Groovy/Jenkinsfile 린트
+
+# --- 기타 ---
+pkief.material-icon-theme                   # 파일 아이콘 테마
+dracula-theme-pro.theme-dracula-pro         # Dracula Pro 테마 (상용)
+ms-ceintl.vscode-language-pack-ko           # 한국어 UI
+github.vscode-pull-request-github           # GitHub PR/이슈 (github.com용 — 엔터프라이즈는 미지원 확인 필요)
+christian-kohler.path-intellisense          # 경로 자동완성
+christian-kohler.npm-intellisense           # package.json 의존성 자동완성
+luisfontes19.vscode-swissknife              # 인코딩/해시 변환 유틸

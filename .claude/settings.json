@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(brew list *)",
+      "Bash(brew leaves *)",
+      "Bash(brew bundle check *)",
+      "Bash(readlink *)",
+      "Bash(shellcheck *)"
+    ]
+  }
+}

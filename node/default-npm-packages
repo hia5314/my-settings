@@ -1,0 +1,4 @@
+# npm 전역 패키지 목록 — brew node@22 기준
+# 설치: grep -v '^#' node/default-npm-packages | xargs npm install -g
+# 포매터/린터류는 전역이 아니라 nvim은 Mason, 프로젝트는 devDependencies 사용
+@openai/codex

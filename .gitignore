@@ -1,0 +1,8 @@
+.DS_Store
+
+# 기기/개인 한정 설정 (~/.zshrc.local, ~/.gitconfig.local 패턴)
+*.local
+.claude/settings.local.json
+
+# 상용 폰트·테마, 사내 자산 — 공개 저장소에 올리지 않음 (디렉터리 전체 미추적)
+private/

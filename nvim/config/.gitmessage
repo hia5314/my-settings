@@ -1,0 +1,40 @@
+[<TYPE>] <Summary>
+
+- <Detail 1>
+- <Detail 2>
+
+# =============================================================================
+# ✍️ Commit Message Template
+# =============================================================================
+# 🎯 TYPE Guide
+#   feat     : Add new features
+#   enhance  : Improve or enhance existing features
+#   refactor : Code refactoring (improving code structure without functionality changes)
+#   docs     : Documentation changes (README, comments, etc.)
+#   fix      : Bug fixes
+#   style    : Code formatting, missing semicolons, etc. (does not affect functionality)
+#   test     : Add or modify test code
+#   chore    : Build process, package manager settings, etc.
+#
+# 📐 Writing Rules
+#   1. The Summary must be no longer than 50 characters
+#   2. Add a blank line between the Summary and the Details
+#   3. Break the Details every 72 characters
+#   4. Summary in English; Details in Korean or English
+#   5. Write Summary in imperative mood (e.g., Add, Fix, Update)
+#   6. Do not end the Summary with a period
+#
+# 🔖 Example
+#   [feat] Add user authentication system
+#
+#   - GitHub OAuth 2.0 PKCE 플로우 구현
+#   - JWT 토큰 기반 인증 미들웨어 추가
+#   - 사용자 세션 관리 기능
+#
+# 🚫 Don’ts
+#   - Using periods in the title
+#   - Ambiguous messages ("fix bug", "update code")
+#   - Including multiple features in a single commit
+#
+# 🔎 Notes
+#   - Commit messages should reflect staged changes; unstaged/untracked files are ignored

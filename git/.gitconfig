@@ -1,0 +1,52 @@
+# my-settings/git/.gitconfig — ~/.gitconfig 심볼릭 링크로 관리
+# user 정보 등 기기/개인 한정 설정은 ~/.gitconfig.local (git 미추적)
+
+[include]
+    path = ~/.gitconfig.local
+
+[core]
+    editor = vim
+    autocrlf = input
+    ignorecase = false
+
+[init]
+    defaultBranch = main
+
+[pull]
+    rebase = false
+
+[push]
+    default = current
+
+[alias]
+    st = status
+    co = checkout
+    br = branch
+    ci = commit
+    lg = log --oneline --graph --decorate
+    last = log -1 HEAD
+    unstage = reset HEAD --
+    amend = commit --amend --no-edit
+
+[color]
+    ui = auto
+
+[diff]
+    colorMoved = default
+
+[merge]
+    conflictstyle = diff3
+
+# credential: 기본은 osxkeychain, GitHub 호스트는 gh CLI가 keyring 토큰 제공
+# (새 기기에서는 gh auth login 후 gh auth setup-git 실행으로 동일하게 재현됨)
+[credential]
+    helper = osxkeychain
+[credential "https://github.com"]
+    helper =
+    helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+    helper =
+    helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://github.nhnent.com"]
+    helper =
+    helper = !/opt/homebrew/bin/gh auth git-credential

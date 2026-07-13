@@ -1,0 +1,30 @@
+{
+    "python.defaultInterpreterPath": "/Users/nhn/.local/bin/python3",
+    "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.formatOnSave": true,
+    "files.autoSave": "afterDelay",
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.formatOnPaste": true,
+    "claudeCode.preferredLocation": "panel",
+    "[groovy]": {
+        "editor.defaultFormatter": "NicolasVuillamy.vscode-groovy-lint"
+    },
+    "editor.fontSize": 16,
+    "editor.fontFamily": "'PragmataProMono Nerd Font', D2Coding, monospace",
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "workbench.secondarySideBar.defaultVisibility": "hidden",
+    "workbench.colorTheme": "Dracula Pro",
+    "terminal.integrated.fontSize": 15,
+    "[dockerfile]": {
+        "editor.defaultFormatter": "ms-azuretools.vscode-containers"
+    },
+    "[markdown]": {
+        "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+    }
+}
