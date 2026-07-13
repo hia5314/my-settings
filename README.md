@@ -1,6 +1,6 @@
 # my-settings
 
-macOS 개발 환경 설정 저장소. **이 저장소만 clone하면 새 맥에서 동일한 환경이 재현된다**는 원칙으로 관리한다.
+macOS 개발 환경 설정 저장소. **저장소가 설정의 원본**이며, `bootstrap.sh`가 실제 위치로 복사해 동기화한다. GUI 앱 설치는 brew 밖에서 별도 관리한다 (Brewfile은 CLI·런타임·폰트만).
 
 ```sh
 git clone https://github.com/hia5314/my-settings.git ~/my-settings
@@ -11,7 +11,7 @@ cd ~/my-settings && ./bootstrap.sh
 
 | 경로 | 내용 | 적용 방식 |
 |---|---|---|
-| `Brewfile` | brew 패키지 전체 (CLI·런타임·cask) | `brew bundle` |
+| `Brewfile` | brew 패키지 (CLI·런타임·폰트 — GUI 앱 제외) | `brew bundle` |
 | `zsh/` | `.zshrc`, `.p10k.zsh` (프롬프트) | 복사 |
 | `git/` | `.gitconfig` — user 정보는 `~/.gitconfig.local`로 분리 | 복사 |
 | `tmux/` | `tmux.conf` (prefix C-a) | 복사 |

@@ -69,13 +69,3 @@ brew "zsh-completions"
 # Fonts — 주 폰트 PragmataPro Mono NF는 상용이라 수동 설치 (private/fonts/)
 # -----------------------------------------------------------------------------
 cask "font-d2coding"         # VS Code 폴백 폰트
-
-# -----------------------------------------------------------------------------
-# Casks (GUI)
-# Claude Code는 brew가 아니라 네이티브 설치(자동 업데이트):
-#   curl -fsSL https://claude.ai/install.sh | bash
-# -----------------------------------------------------------------------------
-cask "iterm2"                # 프로파일: private/iterm/Default.json (수동 import)
-cask "visual-studio-code"    # 설정: vscode/
-cask "intellij-idea"         # IDE 3종 병행 — 신규 팀 주력 스택 확정 후 정리 검토
-cask "pycharm"
