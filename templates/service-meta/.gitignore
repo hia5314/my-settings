@@ -1,0 +1,10 @@
+# 메타 레포: 최상위 디렉터리는 전부 독립 레포로 보고 추적하지 않는다.
+# 이 레포에서 추적할 디렉터리만 !/<dir>/ 로 명시한다.
+/*/
+!/.claude/
+
+# 개인 영역 — 커밋 금지
+.claude/settings.local.json
+CLAUDE.local.md
+
+.DS_Store
