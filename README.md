@@ -1,6 +1,6 @@
 # my-settings
 
-macOS 개발 환경 설정 저장소. **저장소가 설정의 원본**이며, `bootstrap.sh`가 실제 위치로 복사해 동기화한다. GUI 앱 설치는 brew 밖에서 별도 관리한다 (Brewfile은 CLI·런타임·폰트만).
+macOS(Apple Silicon) 개발 환경 설정 저장소 — 경로가 `/opt/homebrew` 등 단일 기기 전제다. **저장소가 설정의 원본**이며, `bootstrap.sh`가 실제 위치로 복사해 동기화한다. GUI 앱 설치는 brew 밖에서 별도 관리한다 (Brewfile은 CLI·런타임·폰트만).
 
 ```sh
 git clone https://github.com/hia5314/my-settings.git ~/my-settings
