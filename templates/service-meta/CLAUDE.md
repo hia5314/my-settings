@@ -23,4 +23,4 @@
 - 팀원과 공유할 것 → 해당 제품 레포의 `CLAUDE.md`·`.claude/`에 커밋, 또는 팀 플러그인
 - 이 서비스에서 나만 쓸 것 → 이 레포의 `.claude/skills|agents/`
 - 팀·서비스 무관한 개인 취향 → `~/.claude/` (원본은 `~/my-settings/claude/`에 반영)
-- 임시 실험 → `.claude/settings.local.json`·`CLAUDE.local.md` (커밋 금지)
+- 개인 규칙·임시 실험 → `.claude/settings.local.json`·`CLAUDE.local.md` (커밋 금지)

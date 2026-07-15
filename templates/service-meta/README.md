@@ -44,6 +44,7 @@ git init && git add -A && git commit -m "init: <서비스명> 워크스페이스
 | 파일 | 내용 |
 |---|---|
 | `CLAUDE.md` | 서비스 개요·레포 목록·규칙 — 세션 시작 시 항상 로드 |
+| `CLAUDE.local.md` | 개인 작업 규칙 (git 미추적) — 팀 공통으로 합의된 항목은 `CLAUDE.md`로 승격 |
 | `.claude/settings.json` | permissions 합집합, hooks, 팀 플러그인 (`enabledPlugins` / `extraKnownMarketplaces`) |
 | `clone.sh` | 하위 레포 remote 목록 (새 장비 복원용) |
 | `.gitignore` | 하위 디렉터리 전체 ignore — 추적할 디렉터리만 `!/<dir>/`로 명시 |
