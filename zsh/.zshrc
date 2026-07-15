@@ -43,6 +43,10 @@ alias top="btop"   # 시스템 모니터
 # 컨텍스트/네임스페이스 전환은 kubectx / kubens 사용 (필요 시 KUBECONFIG로 대상 지정)
 alias k="kubecolor"
 
+# Claude Code — Agent Teams(실험적 다중 에이전트 협업) 플래그를 켠 채 진입하는 opt-in 진입점.
+# 기본 `claude`는 미니멀하게 두고, 여러 에이전트가 공유 task list로 협업해야 할 때만 사용.
+alias claude-team='CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1 claude'
+
 # -----------------------------------------------------------------------------
 # [2] Powerlevel10k instant prompt — 셸이 다 뜨기 전에 프롬프트를 먼저 그려서
 #     체감 시작 속도를 높임. 화면 출력을 만드는 코드는 반드시 이 블록 아래에
