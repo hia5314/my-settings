@@ -1,30 +1,90 @@
 {
+    // --- 에디터 공통 ---
+    "editor.fontSize": 16,
+    "editor.fontFamily": "'PragmataProMono Nerd Font', D2Coding, monospace",
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "files.autoSave": "afterDelay",
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
+    "workbench.colorTheme": "Dracula Pro",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.secondarySideBar.defaultVisibility": "hidden",
+    "terminal.integrated.fontSize": 15,
+    "git.autofetch": true,
+    "redhat.telemetry.enabled": false,
+
+    // 빌드 산출물·가상환경은 파일 감시/검색에서 제외
+    "files.watcherExclude": {
+        "**/target/**": true,
+        "**/build/**": true,
+        "**/.venv/**": true
+    },
+    "search.exclude": {
+        "**/target": true,
+        "**/build": true,
+        "**/.venv": true
+    },
+
+    // --- Java / Spring — JDK는 brew openjdk@21 (zsh/.zshrc의 JAVA_HOME과 동일 keg) ---
+    "java.configuration.runtimes": [
+        {
+            "name": "JavaSE-21",
+            "path": "/opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home",
+            "default": true
+        }
+    ],
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.compile.nullAnalysis.mode": "automatic",
+    "java.saveActions.organizeImports": true,
+    "[java]": {
+        "editor.defaultFormatter": "redhat.java"
+    },
+
+    // --- Python — uv 전담: 기본 인터프리터는 uv 설치 python3, 프로젝트 .venv는 자동 인식 ---
     "python.defaultInterpreterPath": "/Users/nhn/.local/bin/python3",
+    "[python]": {
+        "editor.defaultFormatter": "charliermarsh.ruff",
+        "editor.codeActionsOnSave": {
+            "source.organizeImports.ruff": "explicit"
+        }
+    },
+
+    // --- 컨테이너 / K8s / 파일 형식별 포맷터 ---
+    "[dockerfile]": {
+        "editor.defaultFormatter": "ms-azuretools.vscode-containers"
+    },
+    "[yaml]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[markdown]": {
+        "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
+        "files.trimTrailingWhitespace": false
+    },
+    "[groovy]": {
+        "editor.defaultFormatter": "NicolasVuillamy.vscode-groovy-lint"
+    },
+    "[shellscript]": {
+        "editor.defaultFormatter": "foxundermoon.shell-format"
+    },
+
+    // --- 에디터 연동 도구 ---
+    "github-enterprise.uri": "https://github.nhnent.com",
     "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
     "extensions.experimental.affinity": {
         "asvetliakov.vscode-neovim": 1
     },
-    "workbench.iconTheme": "material-icon-theme",
-    "editor.formatOnSave": true,
-    "files.autoSave": "afterDelay",
-    "editor.defaultFormatter": "charliermarsh.ruff",
-    "editor.formatOnPaste": true,
-    "claudeCode.preferredLocation": "panel",
-    "[groovy]": {
-        "editor.defaultFormatter": "NicolasVuillamy.vscode-groovy-lint"
-    },
-    "editor.fontSize": 16,
-    "editor.fontFamily": "'PragmataProMono Nerd Font', D2Coding, monospace",
-    "[json]": {
-        "editor.defaultFormatter": "vscode.json-language-features"
-    },
-    "workbench.secondarySideBar.defaultVisibility": "hidden",
-    "workbench.colorTheme": "Dracula Pro",
-    "terminal.integrated.fontSize": 15,
-    "[dockerfile]": {
-        "editor.defaultFormatter": "ms-azuretools.vscode-containers"
-    },
-    "[markdown]": {
-        "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
-    }
+    "claudeCode.preferredLocation": "panel"
 }
