@@ -60,6 +60,12 @@ fi
 log_info "brew bundle 실행..."
 brew bundle --file="$SCRIPT_DIR/Brewfile"
 
+# uv 기본 Python — ~/.local/bin/python3 (zshrc·에디터가 참조, 있으면 건너뜀)
+if [[ ! -x "$HOME/.local/bin/python3" ]]; then
+    log_info "uv 기본 Python 설치..."
+    uv python install --default
+fi
+
 # -----------------------------------------------------------------------------
 # 2. Dotfile 복사 — 저장소가 원본, 실제 위치의 파일을 덮어씀
 #    (실사용 파일을 직접 수정했다면 저장소 사본에 반영 후 커밋할 것)

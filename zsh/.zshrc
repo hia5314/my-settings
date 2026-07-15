@@ -79,7 +79,7 @@ export PATH="${GOPATH}/bin:${PATH}"
 export PATH="${HOMEBREW_PREFIX}/opt/node@${NODE_VERSION}/bin:${PATH}"
 
 # Python — brew/PATH 설정 없음: uv 전담.
-#   기본 python3 = uv가 ~/.local/bin에 설치한 3.14 (간단한 스크립트용)
+#   기본 python3 = uv 기본 파이썬, ~/.local/bin (bootstrap이 uv python install --default로 설치)
 #   프로젝트는 uv sync/.venv, CLI 도구는 uv tool install (전역 오염 방지)
 
 # 사용자 로컬 실행 파일 — uv의 기본 python, uv tool, Claude Code 네이티브 설치 등이 사용
