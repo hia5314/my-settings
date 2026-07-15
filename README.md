@@ -19,7 +19,7 @@ cd ~/my-settings && ./bootstrap.sh
 | `nvim/` | Neovim 설정 전체 (vendored) — [README](nvim/README.md) · [사용 가이드](nvim/USAGE.md) | 복사 (디렉터리) |
 | `node/` | npm 전역 패키지 목록 | `npm install -g` |
 | `vscode/` | 설정·키바인딩·확장 목록 | 복사 + `code --install-extension` |
-| `claude/` | Claude Code 전역 설정·[플러그인 문서](claude/plugins.md) | 복사 |
+| `claude/` | Claude Code 전역 설정 — `CLAUDE.md`(영어 배포본)·`CLAUDE.ko.md`(한국어 확인용, 상호 동기 유지)·[플러그인 문서](claude/plugins.md) | 복사 (영어본만) |
 | `templates/` | 서비스 메타 레포 스캐폴드 ([사용법](templates/service-meta/README.md)) | 필요 시 `cp -R`로 인스턴스화 |
 | `private/` | 상용 폰트·테마, 사내 자산 — **git 미추적** (개인 백업으로 이전) | 디렉터리 내 README 참조 |
 
