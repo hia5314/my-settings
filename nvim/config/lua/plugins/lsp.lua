@@ -66,6 +66,11 @@ return {
                     -- Kotlin
                     "ktlint",
                     "kotlin-debug-adapter",
+                    -- DAP 어댑터 — 로컬 추가: mason-nvim-dap이 cmd 게이트라 첫 실행에
+                    -- 로드되지 않으므로 여기서 설치를 보장 (debugging.lua가 경로 참조)
+                    "debugpy",
+                    "delve",
+                    "js-debug-adapter",
                     -- Linters
                     "golangci-lint",
                     "yamllint",

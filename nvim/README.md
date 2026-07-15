@@ -8,6 +8,8 @@
   upstream 병합 시 아래 로컬 변경분을 유지한다.
 - **로컬 변경분(upstream과의 diff):**
   - `lua/plugins/editing.lua` — nvim-spectre 추가 (전역 검색·치환, `<leader>sr`)
+  - `lua/plugins/lsp.lua` — mason-tool-installer에 DAP 어댑터(debugpy·delve·js-debug-adapter) 추가
+    (mason-nvim-dap이 cmd 게이트라 첫 실행에 설치되지 않는 것 보완)
   - `lua/plugins/completion.lua` — 미구성 상태였던 cmp-cmdline 제거
   - `lua/vscode-neovim/config/keymaps.lua` — VS Code UI 호출 매핑 추가 (upstream은 surround만)
   - `.gitignore` — lazy-lock.json을 추적하도록 변경 (재현성)
