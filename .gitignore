@@ -1,5 +1,8 @@
 .DS_Store
 
+# zsh compinit 캐시 (실사용 시 홈에 생성, 저장소엔 불필요)
+.zcompdump*
+
 # 기기/개인 한정 설정 (~/.zshrc.local, ~/.gitconfig.local 패턴)
 *.local
 .claude/settings.local.json

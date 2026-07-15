@@ -12,10 +12,22 @@ brew "gh"                    # GitHub CLI — github.com + github.nhnent.com 모
 brew "jq"                    # JSON processor
 brew "yq"                    # YAML processor
 brew "ripgrep"               # 빠른 grep
+brew "bat"                   # 문법 하이라이트되는 cat — alias cat 연동(zsh/.zshrc)
+brew "eza"                   # ls 대체 (git 상태·트리) — alias ls/ll/la/lt(zsh/.zshrc)
+brew "sd"                    # sed 대체 — 직관적 찾기/바꾸기
+brew "fzf"                   # 퍼지 파인더 — Ctrl-R/Ctrl-T/Alt-C (zsh/.zshrc 연동)
+brew "fzf-tab"               # 탭 완성 후보를 fzf UI로 — zsh/.zshrc [4]에서 로드
 brew "htop"
+brew "procs"                 # ps 대체 (색상·트리)
+brew "dust"                  # du 대체 — 디렉터리 용량 한눈에
+brew "duf"                   # df 대체 — 디스크 마운트 표
+brew "btop"                  # 시스템 모니터 (htop/top 상위호환) — alias top 연동(zsh/.zshrc)
 brew "watch"
 brew "wget"
+brew "xh"                    # curl/httpie 대체 — 친절한 HTTP 클라이언트
+brew "tealdeer"              # tldr — 명령어 실전 예제 요약 man
 brew "lazygit"
+brew "git-delta"             # git diff/blame 페이저 — 설정: git/.gitconfig
 
 # -----------------------------------------------------------------------------
 # Build / Lint
@@ -42,9 +54,13 @@ brew "colima", restart_service: :changed   # vz + Rosetta + virtiofs 구성 (qem
 brew "docker"
 brew "docker-buildx"
 brew "docker-compose"
+brew "lazydocker"            # docker/colima TUI (lazygit의 도커판)
+brew "dive"                  # 도커 이미지 레이어 분석 (용량 최적화)
 brew "helm"
 brew "k9s"
 brew "kubernetes-cli"
+brew "kubectx"               # 컨텍스트/네임스페이스 전환 (kubens 포함) — 완성은 fpath로 자동
+brew "kubecolor"             # kubectl 출력 색칠 — alias k 계열 연동(zsh/.zshrc)
 brew "hadolint"              # Dockerfile 린터
 
 # -----------------------------------------------------------------------------

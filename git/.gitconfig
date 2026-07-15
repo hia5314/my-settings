@@ -8,6 +8,7 @@
     editor = vim
     autocrlf = input
     ignorecase = false
+    pager = delta          # git diff/show/log 출력을 delta로 (brew git-delta)
 
 [init]
     defaultBranch = main
@@ -33,6 +34,13 @@
 
 [diff]
     colorMoved = default
+
+# delta 페이저 — git add -p 등 대화형 diff도 delta로 색칠, 섹션 이동(n/N) + 줄번호
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    navigate = true
+    line-numbers = true
 
 [merge]
     conflictstyle = diff3

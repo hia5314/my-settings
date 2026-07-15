@@ -87,6 +87,7 @@ fi
 
 # Claude Code 전역 설정 (도구가 실행 중 갱신하는 파일 — 기존 것은 백업 후 덮어씀)
 copy_file "$SCRIPT_DIR/claude/settings.json" "$HOME/.claude/settings.json"
+copy_file "$SCRIPT_DIR/claude/CLAUDE.md"     "$HOME/.claude/CLAUDE.md"
 
 # -----------------------------------------------------------------------------
 # 3. npm 전역 패키지 (brew node@22는 keg-only라 경로 직접 사용)
