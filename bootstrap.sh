@@ -144,6 +144,8 @@ cat << 'EOF'
      플러그인 설치 명령: claude/plugins.md 참조
   3. iTerm2 프로파일 import: private/iterm/Default.json (Profiles → Other Actions)
   4. nvim 최초 실행 — lazy.nvim 플러그인 + Mason 도구 자동 설치 (nvim/README.md)
-  5. 시크릿·기기 한정 셸 설정은 ~/.zshrc.local 에 (git 미추적)
-  6. 새 터미널을 열어 프롬프트(p10k)·자동완성 동작 확인
+  5. colima 첫 시작: colima start --vm-type vz --vz-rosetta --mount-type virtiofs
+     (설정은 ~/.colima/default/colima.yaml 에 저장돼 이후 재사용)
+  6. 시크릿·기기 한정 셸 설정은 ~/.zshrc.local 에 (git 미추적)
+  7. 새 터미널을 열어 프롬프트(p10k)·자동완성 동작 확인
 EOF

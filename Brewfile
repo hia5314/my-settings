@@ -50,7 +50,7 @@ brew "uv"                    # Python 전담 — 런타임(uv python install)과
 # -----------------------------------------------------------------------------
 # Containers & Kubernetes
 # -----------------------------------------------------------------------------
-brew "colima", restart_service: :changed   # vz + Rosetta + virtiofs 구성 (qemu 불필요)
+brew "colima", restart_service: :changed   # VM 설정(vz·rosetta·virtiofs)은 ~/.colima — 새 장비 첫 시작은 bootstrap 수동 단계 참조
 brew "docker"
 brew "docker-buildx"
 brew "docker-compose"
