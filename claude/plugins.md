@@ -2,7 +2,7 @@
 
 스코프 원칙: 팀 무관하게 상시 사용 → **user** / 팀·서비스 종속 → **project**(레포 `.claude/settings.json`에 커밋) / 시험 운용 → **local**(`settings.local.json`) 후 승격.
 
-## user scope — 설치됨 (2026-07-14)
+## user scope — 설치됨
 
 | 플러그인 | 용도 | 설치 명령 |
 |---|---|---|
@@ -12,7 +12,7 @@
 | claude-md-management | CLAUDE.md 품질 감사·세션 학습 반영 | `claude plugin install claude-md-management@claude-plugins-official` |
 | claude-hud | statusline (서드파티) | `claude plugin marketplace add jarrodwatts/claude-hud` 후 install |
 
-## 후보 — 필요해질 때 (참고, 2026-07-14 전수 검토)
+## 후보 — 필요해질 때
 
 | 플러그인 | 시점 | 스코프 |
 |---|---|---|
@@ -33,7 +33,7 @@
 | session-report | 세션 토큰·캐시 사용 분석이 궁금할 때 | user 일시 |
 | langfuse | 팀이 LLM 트레이싱을 Langfuse로 할 때 | project |
 
-## 미설치로 확정 (2026-07-14)
+## 미설치로 확정
 
 내장 기능·기존 도구로 대체되어 설치하지 않는다:
 
@@ -50,12 +50,3 @@
 | exa · tavily · firecrawl 등 웹 검색/스크랩 계열 | 내장 WebSearch/WebFetch | 대량 크롤링 니즈가 생기면 그때 재검토 |
 
 서드파티 마켓플레이스는 `claude plugin marketplace add <github-repo>` 후 install.
-
-## 제거 이력 (2026-07-13)
-
-미니멀 재구성 시 제거:
-
-- `oh-my-claudecode@omc` 플러그인 + npm 전역 `oh-my-claude-sisyphus` (이중 설치 상태였음)
-- `harness@harness-marketplace`, `andrej-karpathy-skills@karpathy-skills`
-- OMC 부속물: HUD statusline, `~/.claude/hud/`, `~/.claude/.omc*`, OMC 설치 스킬(deepinit, omc-reference)
-- 마켓플레이스 등록: omc, harness-marketplace, karpathy-skills

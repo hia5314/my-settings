@@ -15,7 +15,7 @@ map("x", "gS", "<Plug>(nvim-surround-visual-line)", { desc = "Surround visual li
 map("n", "ds", "<Plug>(nvim-surround-delete)", { desc = "Delete surround" })
 map("n", "cs", "<Plug>(nvim-surround-change)", { desc = "Change surround" })
 
--- 이하 로컬 추가: VS Code UI 호출 매핑 (2026-07-13)
+-- 이하 로컬 추가 (upstream에 없음): VS Code UI 호출 매핑
 local vscode = require "vscode"
 
 local function action(command)

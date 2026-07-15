@@ -4,8 +4,8 @@
 `~/.config/nvim`을 직접 수정하거나 `:Lazy sync`로 lazy-lock.json이 바뀌면 여기 사본에 반영해 커밋할 것.
 일상 사용 키맵·기능 요약은 [USAGE.md](./USAGE.md) 참조.
 
-- 출처: `hwyncho/neovim-settings`의 **최신본(324b216, 2026-05-27, nvim v0.12 마이그레이션)** 기준으로
-  2026-07-13 vendoring — 이제 원본 저장소가 아니라 여기서 직접 관리한다.
+- 출처: `hwyncho/neovim-settings` (vendored, 기준 커밋 324b216) — 여기서 직접 관리하며,
+  upstream 병합 시 아래 로컬 변경분을 유지한다.
 - **로컬 변경분(upstream과의 diff):**
   - `lua/plugins/editing.lua` — nvim-spectre 추가 (전역 검색·치환, `<leader>sr`)
   - `lua/plugins/completion.lua` — 미구성 상태였던 cmp-cmdline 제거
@@ -17,7 +17,7 @@
 ## 새 맥 설치 순서
 
 1. bootstrap이 `nvim/config/`를 `~/.config/nvim`으로 복사
-2. `nvim` 첫 실행 → lazy.nvim이 플러그인 58개(lazy-lock.json 고정) 설치,
+2. `nvim` 첫 실행 → lazy.nvim이 플러그인(버전은 lazy-lock.json에 고정) 설치,
    **mason-tool-installer가 LSP·포매터·린터·DAP·Java 스택(jdtls 등)을 전부 자동 설치** (수동 단계 없음)
 3. 외부 CLI(shellcheck·hadolint·jq·dotenv-linter·fd·ripgrep·tree-sitter-cli)는 Brewfile로 설치됨
 4. 폰트: **PragmataPro Mono Nerd Font** (상용 — 수동 설치, `~/Library/Fonts` 백업본 사용)

@@ -82,9 +82,6 @@ export PATH="${HOMEBREW_PREFIX}/opt/node@${NODE_VERSION}/bin:${PATH}"
 #   기본 python3 = uv가 ~/.local/bin에 설치한 3.14 (간단한 스크립트용)
 #   프로젝트는 uv sync/.venv, CLI 도구는 uv tool install (전역 오염 방지)
 
-# PostgreSQL 클라이언트(psql) — DB 서버는 로컬 설치 대신 docker(colima)로 기동
-export PATH="${HOMEBREW_PREFIX}/opt/libpq/bin:${PATH}"
-
 # 사용자 로컬 실행 파일 — uv의 기본 python, uv tool, Claude Code 네이티브 설치 등이 사용
 export PATH="${HOME}/.local/bin:${PATH}"
 
